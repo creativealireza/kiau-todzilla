@@ -103,3 +103,22 @@ export async function deleteCompletedTasks({ adminId, userId }) {
         console.error(error);
     }
 }
+// Login
+export async function getAdmin({ email, password }) {
+    try {
+        const response = await axios.post(`${BACKEND_URL}/login/getAdmin`, { email, password });
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function getVisitor({ username }) {
+    try {
+        const response = await axios.post(`${BACKEND_URL}/login/getVisitor`, { username });
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
