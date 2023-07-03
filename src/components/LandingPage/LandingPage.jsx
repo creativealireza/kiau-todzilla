@@ -4,15 +4,15 @@ import {
     Container,
     Button,
     Stack,
-    Link,
     Box
 } from '@mui/material';
-import {Authentication} from "../../Authentication/Authentication";
+import { useNavigate } from "react-router-dom";
 import { themes } from "../../Tools/colors";
 import Typewriter from 'typewriter-effect';
 
-export const LandingPage = () => {
+export const LandingPage = ({ setAuthDialog }) => {
     const isSmall = useMediaQuery('(max-width:600px)');
+    const navigate = useNavigate();
 
     return (
         <>
@@ -44,7 +44,13 @@ export const LandingPage = () => {
                     </Stack>
 
                     <Box sx={{ display: 'flex', padding: "1rem 0 0 10%" }}>
-                        <Button href="/auth" variant="contained" size={isSmall ? 'medium' : 'large'}>
+                        <Button
+                            variant="contained"
+                            size={isSmall ? 'medium' : 'large'}
+                            onClick={() => {
+                                setAuthDialog(true)
+                                navigate("/auth")
+                            }}>
                             Login - It`s free
                         </Button>
                     </Box>
