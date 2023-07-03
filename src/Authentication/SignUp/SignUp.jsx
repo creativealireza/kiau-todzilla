@@ -5,7 +5,6 @@ import { Password } from "../../Form/Password";
 import { Email } from "../../Form/Email";
 import { SearchSkills } from "../../Form/Skills/SearchSkills";
 import { Language } from "../../Form/Language";
-import { NotificationSnackbar } from "../../Form/NotificationSnackbar";
 import { newAdmin } from "../../API/API";
 import { splitFullName } from "../../Tools/splitFullName";
 import { saveData } from "../../Tools/localActions";
@@ -223,10 +222,6 @@ export const SignUp = ({ openForm, OpenSignUp, AuthDialog }) => {
                     Sign Up
                 </Button>
             </DialogActions>
-            {isAdminCreated &&
-                <NotificationSnackbar
-                    closeSnack={{ value: !!isAdminCreated, setValue: setIsAdminCreated }}
-                    message={"Admin Created Successfully!"} />}
         </Dialog>
     );
 }
