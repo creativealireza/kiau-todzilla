@@ -30,3 +30,76 @@ export async function newMembers(member) {
         console.error(error);
     }
 }
+
+// Tasks
+export async function newTask(task) {
+    try {
+        const response = await axios.post(`${BACKEND_URL}/tasks/newTask`, task);
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function getTasks({ adminId }) {
+    try {
+        const response = await axios.post(`${BACKEND_URL}/tasks/getTasks`, { adminId });
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function editTasks(task) {
+    try {
+        const response = await axios.put(`${BACKEND_URL}/tasks/editTask`, task);
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function deleteTasks({ adminId, deleteTaskId: taskId, userId }) {
+    try {
+        const response = await axios.put(`${BACKEND_URL}/tasks/deleteTask`, { adminId, taskId, userId });
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function completeTasks({ adminId, taskId, userId }) {
+    try {
+        const response = await axios.put(`${BACKEND_URL}/tasks/completeTask`, { adminId, taskId, userId });
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function revertTasks({ adminId, taskId, userId }) {
+    try {
+        const response = await axios.put(`${BACKEND_URL}/tasks/revertTask`, { adminId, taskId, userId });
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function deleteAllTasks({ adminId, userId }) {
+    try {
+        const response = await axios.put(`${BACKEND_URL}/tasks/deleteAllTasks`, { adminId, userId });
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function deleteCompletedTasks({ adminId, userId }) {
+    try {
+        const response = await axios.put(`${BACKEND_URL}/tasks/deleteCompletedTasks`, { adminId, userId });
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
