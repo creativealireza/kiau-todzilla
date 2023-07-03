@@ -33,21 +33,6 @@ export const EditTextarea = ({ taskDescription }) => {
             <IconButton variant="outlined" color="neutral" onClick={addEmoji('🎉')}>
               🎉
             </IconButton>
-            <IconButton variant="outlined" color="neutral" onClick={addEmoji('📝')}>
-              📝
-            </IconButton>
-            <IconButton variant="outlined" color="neutral" onClick={addEmoji('🎈')}>
-              🎈
-            </IconButton>
-            <IconButton variant="outlined" color="neutral" onClick={addEmoji('🍕')}>
-              🍕
-            </IconButton>
-            <IconButton variant="outlined" color="neutral" onClick={addEmoji('🍩')}>
-              🍩
-            </IconButton>
-            <IconButton variant="outlined" color="neutral" onClick={addEmoji('🚗')}>
-              🚗
-            </IconButton>
           </Box>
         }
         endDecorator={
