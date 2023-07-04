@@ -8,9 +8,6 @@ export const FailedMessage = ({ err }) => {
                     <Typography variant="h4">
                         Nothing to Show 😢
                     </Typography>
-                    <Typography variant="subtitle1">
-                        add a task or try harder 😐
-                    </Typography>
                 </>
                 :
                 <>
