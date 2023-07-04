@@ -1,6 +1,6 @@
-// import { Members } from '../Members/Members';
-// import { Home } from '../Home/Home';
-// import { History } from '../History/History';
+import { Members } from '../Members/Members';
+import { Home } from '../Home/Home';
+import { History } from '../History/History';
 import { useState } from "react";
 import { Tab, Box } from "@mui/material";
 import { TabPanel, TabContext, TabList } from '@mui/lab';
@@ -27,9 +27,9 @@ export const UITabs = () => {
           </TabList>
         </Box>
 
-        {/* <TabPanel value="1">{<Home />}</TabPanel>
-        <TabPanel value="2">{<History />}</TabPanel> */}
-        {/* <TabPanel value="3">{<Members />}</TabPanel> */}
+        <TabPanel value="1">{<Home />}</TabPanel>
+        <TabPanel value="2">{<History />}</TabPanel>
+        <TabPanel value="3">{<Members />}</TabPanel>
       </TabContext>
     </Box>
   );
