@@ -19,7 +19,7 @@ import {
 import LoadingButton from '@mui/lab/LoadingButton';
 
 export const Tasks = ({ complete, edit, tasks, updateTasks, isReq, errorMessage, adminId }) => {
-    const isHorizonal = useMediaQuery('(max-width : 650px)');
+    const isHorizontal = useMediaQuery('(max-width : 650px)');
     const profile500 = useMediaQuery('(max-width : 500px)');
     const profile450 = useMediaQuery('(max-width : 450px)');
 
@@ -34,9 +34,9 @@ export const Tasks = ({ complete, edit, tasks, updateTasks, isReq, errorMessage,
     const user = readData("user");
     const userId = user?.memberId ? user?.memberId : user?.adminId;
 
-    function handleDeleteDialog(deleteTaskId) {
+    function handleDeleteDialog(deleteTaskId, DeleteTitle) {
         setOpenDelete(openDelete => !openDelete);
-        setDeleteTask({ adminId, deleteTaskId, userId });
+        setDeleteTask({ adminId, deleteTaskId, userId, DeleteTitle });
     }
 
     function handleEditDialog(editTasks) {
@@ -127,12 +127,12 @@ export const Tasks = ({ complete, edit, tasks, updateTasks, isReq, errorMessage,
                             </Stack>
                         </Stack>
 
-                        {isHorizonal && <Divider sx={{ width: "90%" }} orientation="horizontal" variant="middle" flexItem />}
+                        {isHorizontal && <Divider sx={{ width: "90%" }} orientation="horizontal" variant="middle" flexItem />}
 
                         <ButtonGroup
-                            orientation={isHorizonal ? "horizontal" : "vertical"}
+                            orientation={isHorizontal ? "horizontal" : "vertical"}
                             aria-label="vertical outlined button group"
-                            sx={{ margin: `${isHorizonal ? "0.6rem auto 0" : "0"}`, minWidth: 120 }}
+                            sx={{ margin: `${isHorizontal ? "0.6rem auto 0" : "0"}`, minWidth: 120 }}
                         >
                             {edit && user?.isAdmin && <Button
                                 key="edit"
@@ -143,7 +143,7 @@ export const Tasks = ({ complete, edit, tasks, updateTasks, isReq, errorMessage,
                             <Button
                                 key="delete"
                                 sx={{ "&:hover": { background: "#d32f2f", color: "#fff", border: "1px solid #d32f2f" } }}
-                                onClick={() => handleDeleteDialog(task?.taskId)}>
+                                onClick={() => handleDeleteDialog(task?.taskId, task?.title)}>
                                 Delete
                             </Button>
                             {!complete &&
@@ -186,7 +186,7 @@ export const Tasks = ({ complete, edit, tasks, updateTasks, isReq, errorMessage,
                 isReq={isReq}
                 modalStatus={openDelete}
                 handleDeleteDialog={handleDeleteDialog}
-                DeleteDialogTitle={`Delete ${"Title"}`}
+                DeleteDialogTitle={`Delete ${deleteTask?.DeleteTitle}`}
                 DialogDescription="Delete it and you are gonna need it immediately! 🙂"
                 DeleteBtnTitle="Delete"
                 CancelBtnTitle="Mission Abort"
