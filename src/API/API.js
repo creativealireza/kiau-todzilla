@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const COUNTRY_URL = `https://restcountries.com/v3.1/all`;
-const BACKEND_URL = `https://todzilla-backend.iran.liara.run/`;
+const BACKEND_URL = `https://todzilla-backend.iran.liara.run`;
 
 export async function getAllLanguages() {
     try {
