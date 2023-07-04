@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { SearchBox } from "../../Form/SearchBox/SearchBox";
 import { AddMember } from "./AddMember/AddMember";
 import { CardMember } from "./CardMember/CardMember";
-import { includesStrings } from "../../Tools/includesStrings";
 import { useSelector } from 'react-redux';
 import { readData } from "../../Tools/localActions";
 import {
