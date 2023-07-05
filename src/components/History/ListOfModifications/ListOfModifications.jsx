@@ -225,7 +225,7 @@ export const ListOfModifications = () => {
                         onRowsPerPageChange={handleChangeRowsPerPage}
                     />
                 </Paper>
-                : <Loading />}
+                : <Loading isLoadingData={modifications?.length}/>}
         </Box>
     );
 }
