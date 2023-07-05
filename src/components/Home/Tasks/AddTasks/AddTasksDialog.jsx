@@ -50,7 +50,7 @@ export const AddTasksDialog = ({ modalStatus, handleAddDialog, isReq, errorMessa
             isDeleted: false,
         })
 
-        if (task.status === 200) {
+        if (task?.status === 200) {
             setIsLoading(false)
             isReq(req => !req)
             handleAdd();
