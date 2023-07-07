@@ -23,7 +23,6 @@ export const ProfileNav = ({setAuthDialog, auth}) => {
     const [adminArray, setAdminArray] = useState({});
     
     const user = readData("user");
-    
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
@@ -45,7 +44,7 @@ export const ProfileNav = ({setAuthDialog, auth}) => {
         <>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                 <Typography variant="caption" display="block" sx={{ marginTop: "0.5rem" }}>
-                    {adminArray?.firstName}
+                    {adminArray?.adminId ? adminArray?.firstName : user?.firstName}
                 </Typography>
 
                 <IconButton
