@@ -26,7 +26,7 @@ export const TasksDialog = React.memo(({ open, handleTasksDialog, tasks }) => {
             maxWidth="sm"
         >
             <DialogTitle id="alert-dialog-title" sx={{ display: 'flex', justifyContent: "space-between" }}>
-                <Typography variant="h5" gutterBottom>
+                <Typography gutterBottom>
                     Tasks
                 </Typography>
                 <Button
