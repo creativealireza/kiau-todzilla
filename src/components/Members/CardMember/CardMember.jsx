@@ -37,8 +37,9 @@ export const CardMember = ({ members }) => {
     setTasks(tasksList)
     setOpenTasksDialog(openTasksDialog => !openTasksDialog)
   }
+  
   const user = readData("user");
-  const userTasks = user?.tasks?.filter(task => !task?.isDeleted);
+  const userTasks = user?.tasks && user?.tasks?.filter(task => !task?.isDeleted);
 
   return (
     <Stack
@@ -124,7 +125,7 @@ export const CardMember = ({ members }) => {
             <Divider variant="middle" sx={{ margin: "1rem 0" }} />
 
             <Stack direction="row" flexWrap="wrap" alignItems="center" sx={{ marginTop: '1rem' }}>
-              {Number(userTasks?.some(task => {
+              {Number(userTasks && userTasks?.some(task => {
                 let sum = 0;
                 task?.members?.map(taskMember => {
                   if (taskMember?.memberId === member?.memberId) sum += 1;
