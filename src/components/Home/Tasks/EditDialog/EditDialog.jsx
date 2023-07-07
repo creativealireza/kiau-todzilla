@@ -3,6 +3,7 @@ import { EditTextarea } from "./EditTextarea";
 import { EditMembers } from "./EditMembers";
 import { useSelector } from 'react-redux';
 import { editTasks } from "../../../../API/API";
+import { readData } from "../../../../Tools/localActions";
 import {
     Button,
     Dialog,
@@ -17,6 +18,7 @@ import {
 
 export const EditDialog = ({ modalStatus, handleEditDialog, editTask, updateTasks, adminId }) => {
     const taskMembers = useSelector(state => state.members)
+    const membersFromLocal = readData("user")?.members;
 
     const [isLoading, setIsLoading] = useState(false);
     const [title, setTitle] = useState("");
@@ -92,7 +94,7 @@ export const EditDialog = ({ modalStatus, handleEditDialog, editTask, updateTask
                 <EditTextarea taskDescription={{ value: description, setValue: setDescription }} />
 
                 <EditMembers
-                    members={taskMembers?.at(0)?.members}
+                    members={taskMembers?.length !== 1 ? taskMembers?.at(0)?.members : membersFromLocal}
                     selectMembers={{ value: selectedMembers, setValue: setSelectedMembers }} />
             </DialogContent>
             <DialogActions>
