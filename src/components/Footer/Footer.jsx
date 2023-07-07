@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 
 export const Footer = () => {
+    console.clear();
     return (
         <>
             <CssBaseline />
