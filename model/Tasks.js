@@ -25,6 +25,9 @@ const TaskSchema = new mongoose.Schema({
   members: {
     type: Array,
   },
+  adminId: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Task", TaskSchema);
